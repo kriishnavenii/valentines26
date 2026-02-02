@@ -44,17 +44,48 @@
       background: #ccc;
       position: absolute;
     }
+
+    /* YES PAGE */
+.yes-page {
+  background: #ffe6ee;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.yes-page img {
+  width: 250px;
+  border-radius: 20px;
+  margin: 20px 0;
+}
+
+/* FLOATING HEARTS */
+.heart {
+  position: fixed;
+  bottom: -20px;
+  font-size: 24px;
+  animation: floatUp 4s linear infinite;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
   </style>
 </head>
 <body>
 
   <div class="card">
     <h1>Will you be my Valentine? 💖</h1>
-    <img
-    src="https://media.tenor.com/15169688/tenor.gif"
-    alt="cute"
-    style="width:200px; border-radius:15px; margin-bottom:20px;"
-  >
     <button id="yes">Yes 💘</button>
     <button id="no">No 😢</button>
   </div>
@@ -71,6 +102,14 @@
     });
 
     yesBtn.addEventListener("click", () => {
+  document.body.innerHTML = `
+    <div class="yes-page">
+      <h1>YAYYY 💖🥹</h1>
+      <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWVtZGE0b2N2eGliNzl2ZWN1NDN3YzQ3eDViMGFkd3ZsYzN3djRqcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/PDoEaYKx7KkKI/giphy.gif">
+      <p>You’re officially my Valentine 💘</p>
+    </div>
+  `;
+});
       document.body.innerHTML = "<h1 style='color:#ff4d6d;'>YAY!!! 💕🥹💘</h1>";
     });
   </script>
